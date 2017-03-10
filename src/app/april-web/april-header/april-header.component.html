@@ -1,0 +1,19 @@
+<header id="luxbar" class="luxbar-fixed">
+  <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox" />
+  <div class="luxbar-menu luxbar-menu-right luxbar-menu-light">
+    <ul class="luxbar-navigation">
+      <li class="luxbar-header">
+        <a href="#" class="luxbar-brand"><img src="/assets/img/logosvg.svg" alt="ALLIANZ NORTH AMERICA"></a>
+        <label class="luxbar-hamburger luxbar-hamburger-doublespin" id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+      </li>
+      <li class="luxbar-item"><a href="#">About</a></li>
+      <li class="luxbar-item"><a href="#">Settings</a></li>
+      <li *ngIf="!connected" id="butLogin" class="luxbar-item">
+        <a  (click)="login()" aria-label="Login">Login</a>
+      </li>
+      <li *ngIf="connected" id="butLogout" class="luxbar-item">
+        <a  (click)="logout()" aria-label="Logout">Logout</a>
+      </li>
+    </ul>
+  </div>
+</header>

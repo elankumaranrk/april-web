@@ -1,14 +1,135 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <title>AprilWeb</title>
+  <title>The April</title>
   <base href="/">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&amp;lang=en" rel="stylesheet">
+  <style>
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+      -webkit-tap-highlight-color: transparent
+    }
+    
+    body {
+      background-color: #fff;
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      overflow-x: hidden;
+      padding: 0;
+      width: 100%
+    }
+    
+    a,
+    img,
+    select,
+    iframe {
+      border: 0;
+      outline: none
+    }
+    
+    html {
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      width: 100%
+    }
+    
+    .loader {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 90vh;
+      /*background-color: #12162B;*/
+    }
+    
+    .jawn {
+      position: relative;
+      background-color: #009bff;
+      width: 10px;
+      height: 10px;
+      margin: 0 auto;
+      border-radius: 50%;
+    }
+    
+    .jawn:after,
+    .jawn:before {
+      content: "";
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+    }
+    
+    .jawn:after {
+      left: -10px;
+      top: -5px;
+      background-color: #009bff;
+      transform-origin: 15px 10px;
+      animation: axis 1s linear infinite;
+    }
+    
+    .jawn:before {
+      left: -25px;
+      top: -15px;
+      background-color: #009bff;
+      transform-origin: 30px 20px;
+      animation: axis 2s linear infinite;
+    }
+    
+    @keyframes axis {
+      0% {
+        transform: rotateZ(0deg) translate3d(0, 0, 0);
+      }
+      100% {
+        transform: rotateZ(360deg) translate3d(0, 0, 0);
+      }
+    }
+
+  </style>
 </head>
+
 <body>
-  <app-root>Loading...</app-root>
+  <app-root>
+    <div class="loader">
+      <div class="jawn"></div>
+    </div>
+  </app-root>
+  <script>
+    var isChromium = window.chrome,
+      winNav = window.navigator,
+      vendorName = winNav.vendor,
+      isOpera = winNav.userAgent.indexOf("OPR") > -1,
+      isIEedge = winNav.userAgent.indexOf("Edge") > -1,
+      isIOSChrome = winNav.userAgent.match("CriOS");
+      registerSW = false;
+
+    if (isIOSChrome) {
+     registerSW = true;
+    } else if (isChromium !== null && isChromium !== undefined && vendorName === "Google Inc." && isOpera == false &&
+      isIEedge == false) {
+      // Bug in Google Chrome - don't register SW to avoid issues with Google OAuth
+    } else {
+      registerSW = true;
+    }
+    if ('serviceWorker' in navigator && registerSW) {
+      navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
+        console.log('Service Worker registered');
+      }).catch(function (err) {
+        console.log('Service Worker registration failed: ', err);
+      });
+    }
+
+  </script>
 </body>
+
 </html>
