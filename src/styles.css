@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+.wc-header {
+  background: linear-gradient(141deg, #555 0%, #fff 100%);
+  padding: 15px 10px 10px 10px;
+  display: none;
+}
+
+.wc-console {
+  border: none;
+  border-top: 2px solid #3A96DD;
+}
+ 
+.wc-message-from-bot .wc-message-content {
+    background-color:#fff;
+}
