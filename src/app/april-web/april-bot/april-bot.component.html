@@ -10,11 +10,34 @@
       <p>#drone #funny #catgif #broken #lost #hilarious #good #red #blue #nono #why #yes #yesyes #aliens #green</p>
     </div>
   </div>-->
-  <svg (click)="close()" id="icon-cross" class="btn--search-close" viewBox="0 0 24 24">
-    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+  <svg fill="#fff" [class.hide]="openSearch==false" (click)="close()" id="icon-cross" class="btn--search-close" width="36"
+    height="36" viewBox="0 0 36 36">
+    <path d="M0 0h36v36h-36z" fill="none" />
+    <path d="M30 16.5h-18.26l8.38-8.38-2.12-2.12-12 12 12 12 2.12-2.12-8.38-8.38h18.26v-3z" />
   </svg>
   <div class="page">
     <div class="page1">
+      <div class="modal__title">How may I help you.</div>
+      <ul class="copy">
+        <li>Open [app name]. Example: "Open Gmail."</li>
+        <li>Go to [website]. Ex.: "Go to CNET.com."</li>
+        <li>Call [contact name]. Ex.: "Call Mom."</li>
+        
+        <li>Create a calendar event or Schedule an appointment. Ex.: "Create appointment Go on a walk tomorrow at 10 a.m."</li>
+        <li>Set an alarm for [specific time, or amount of time]. Ex.: "Set alarm for 10 a.m." Or "Set alarm for 20 minutes from
+          now."</li>
+        <li>Set a timer for [X] minutes.</li>
+        <li>Note to self [contents of note].</li>
+        <li>Start a list for [list name].</li>
+        <li>Send Hangout message to [contact name].</li>
+        <li>Remind me to [do a task]. Ex.: "Remind me to get dog food at Target," will create a location-based reminder. "Remind
+          me to take out the trash tomorrow morning," will give you a time-based reminder.</li>
+        <li>Show me my pictures from [location]. Ex.: "Show me my pictures from San Francisco."</li>
+        <li>Show me my calendar.</li>
+        <li>When's my next meeting?</li>
+    
+      </ul>
+      <div class="disclaimer">Commands shown here are for demonstration purpose only. </div>
     </div>
     <div id="cw" [class.hide]="openSearch==false" class="page2">
     </div>

@@ -1,15 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
 .wc-header {
-  background: linear-gradient(141deg, #555 0%, #fff 100%);
-  padding: 15px 10px 10px 10px;
-  display: none;
+  /*border-bottom: solid 1px #143861;*/
+  padding: 25px 30px 10px 40px;
+  background: #fafafa;
+  color: #143861;
+  opacity: 0.9;
+  box-shadow: none;
+}
+
+.wc-header span {
+  margin-right: 50px;
 }
 
 .wc-console {
   border: none;
-  border-top: 2px solid #3A96DD;
+  border-top: 1px solid #143861;
 }
- 
+
+.wc-card {
+  border: none;
+}
+
 .wc-message-from-bot .wc-message-content {
-    background-color:#fff;
+  background-color: #fafafa;
+}
+
+@media screen and (max-width: 768px) {
+  .wc-header {
+    /*border-bottom: solid 1px #143861;*/
+    padding: 25px 30px 10px 70px;
+    background: #143861;
+    color: #fafafa;
+  }
 }

@@ -79,6 +79,7 @@ april-cards {
   color: #fff;
   font: 300 58px 'Roboto', sans-serif;
   position: relative;
+  animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
 .hero-subtitle {
@@ -89,6 +90,7 @@ april-cards {
   font-weight: 300;
   line-height: 24px;
   position: relative;
+  /*animation: focus-in-contract 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;*/
 }
 
 .image-holder img {
@@ -162,7 +164,59 @@ april-cards {
   cursor: pointer;
 }
 
-.m{
-  display:none;
+.m {
+  display: none;
   overflow: hidden;
+}
+
+april-footer {
+  transform: translate3d(0, 0, 0);
+  background: #f6f6f6;
+  font-size: 12px;
+  font-weight: 400;
+  left: 0;
+  bottom: 0;
+  position: static;
+  width: 100%;
+}
+
+@keyframes focus-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes focus-in-contract {
+  0% {
+    letter-spacing: 1em;
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
 }
