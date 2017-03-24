@@ -23,7 +23,7 @@
       margin: 0;
       overflow-x: hidden;
       padding: 0;
-      width: 100%
+      max-width: 100vw;
     }
     
     a,
@@ -41,7 +41,7 @@
       height: 100%;
       margin: 0;
       padding: 0;
-      width: 100%
+      max-width: 100vw;
     }
     
     .loader {
@@ -131,11 +131,12 @@
       });
     }
     window.onload = function () {
-      console.log("loading bot..");
+      var botConnection = new BotChat.DirectLine({
+        secret: '1J5-JkSXl1k.cwA.fWQ.abnb2VmiEVVs5Pe1w2MK-9UAoxVCEmn9k7StNI4q1Dw',
+        webSocket: "true" // defaults to true
+      });
       BotChat.App({
-        directLine: {
-          secret: 'fQo8RWO9K44.cwA.-h0.aikb9h6hIb4Ri0FROIuJI7gmb6r7xnlbwjTpqALPMGQ'
-        },
+        botConnection: botConnection,
         user: {
           id: 'Elan Kumaran'
         },
@@ -143,6 +144,48 @@
           id: 'botid'
         }
       }, document.getElementById("cw"));
+
+      var chatInput;
+      setTimeout(function () {
+
+        console.log(chatInput);
+      }, 1000)
+
+      var invokeBot = function () {
+        var attribute = this.getAttribute("data-conv");
+        console.log(attribute);
+      }
+
+      const postButtonMessage = (val) => {
+        botConnection.postActivity({
+          from: {
+            id: 'Elan Kumaran'
+          }, 
+          type: 'message',
+          text: val
+        }).subscribe(
+          id => console.log("Posted activity, assigned ID ", id),
+          error => console.log("Error posting activity", error)
+        )
+      };
+
+
+      setTimeout(function () {
+        var cards = document.getElementsByClassName("card");
+        console.log(cards.length);
+        Array.from(cards).forEach(function (el) {
+          el.addEventListener('click', function () {
+            // var chatInput = document.getElementsByTagName("input")[2];
+            // var sendButton = document.getElementsByClassName("wc-send")[0];
+
+            // chatInput.value = this.getAttribute("data-conv");
+            // console.log(sendButton);
+            postButtonMessage(this.getAttribute("data-conv"));
+          });
+        })
+      }, 1000);
+
+
     };
 
   </script>

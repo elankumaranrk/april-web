@@ -235,7 +235,7 @@
     left: 0;
   }
   .btn--search-close {
-    top: 0.5em;
+    top: 0.8em;
   }
 }
 
@@ -250,11 +250,12 @@
 .modal__title {
   font-size: 48px;
   line-height: 50px;
-  text-align: left;
+  text-align: center;
   width: auto;
   font-weight: 300;
   padding-top: 100px;
   padding-left: 50px;
+  animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;  
 }
 
 .modal__body {
@@ -269,9 +270,38 @@
   text-align: left;
 }
 .copy li {
-  padding: 5px;
+  padding: 10px;
+  animation-delay: 3s;
+  animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+
 }
 .disclaimer {
   font-size: 12px;
   opacity: 0.2;
+}
+
+@keyframes tracking-in-contract {
+  0% {
+    letter-spacing: 1em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
 }

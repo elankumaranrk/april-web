@@ -20,6 +20,6 @@
       <p>Hello, please <span (click)="login()">login</span> to open your wallet</p>
     </div>
   </div>
-  <april-bot (closeChat)="closeChat()" [openSearch]="openSearch"></april-bot>
+  <april-bot [class.hide]="!openSearch" (closeChat)="closeChat()" [openSearch]="openSearch"></april-bot>
 </div>
 <!--<april-footer></april-footer>-->

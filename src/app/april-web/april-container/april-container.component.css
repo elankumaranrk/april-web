@@ -220,3 +220,8 @@ april-footer {
     opacity: 1;
   }
 }
+.hide{
+/*position: absolute;
+overflow-x: hidden;*/
+
+}
