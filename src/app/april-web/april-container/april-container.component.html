@@ -1,25 +1,9 @@
-<april-header [connected]="(af.auth | async)" (signIn)="login($event)" (signOut)="logout($event)">
-</april-header>
-<div [class.hero]=true>
-  <div class="image-holder">
-    <!--<img alt="The April" class="hero-image" src="/assets/img/playground-header.jpg">-->
-  </div>
-  <div class="center-wrapper hero-content">
-    <h1 class="hero-title">
-      The April
-    </h1>
-    <p class="hero-subtitle">
-      Feed your curiosity and explore the world of Insurance.
-    </p>
-  </div>
-  <div *ngIf="(af.auth | async)" class="cards" [class.m]="openSearch==true">
-    <april-cards (click)="cardClicked()" *ngFor="let item of cardData" [title]="item.title" [articles]="item.articles" [cardImage]="item.cardImage"></april-cards>
-  </div>
-  <div class="log">
-    <div *ngIf="!(af.auth | async)">
-      <p>Hello, please <span (click)="login()">login</span> to open your wallet</p>
-    </div>
-  </div>
-  <april-bot [class.hide]="!openSearch" (closeChat)="closeChat()" [openSearch]="openSearch"></april-bot>
+<div *ngIf="(af.auth | async)" class="cards" [class.m]="openSearch==true">
+  <april-cards (beginChat)="cardClicked($event)" *ngFor="let item of cardData" [title]="item.title" [articles]="item.articles" [cardImage]="item.cardImage"></april-cards>
 </div>
-<!--<april-footer></april-footer>-->
+<div class="log">
+  <div *ngIf="!(af.auth | async)">
+    <p>Hello, please <span (click)="login()">login</span> to open your wallet</p>
+  </div>
+</div>
+ <april-bot [class.hide]="!openSearch" (closeChat)="closeChat()" [openSearch]="openSearch"></april-bot>

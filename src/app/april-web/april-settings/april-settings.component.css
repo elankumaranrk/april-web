@@ -1,0 +1,69 @@
+.settingsCards {
+  flex: 1 300px;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  flex-wrap: wrap;
+  cursor: pointer;
+  height: 380px !important;
+  transition: transform .4s cubic-bezier(.25, .46, .45, .94), opacity .4s cubic-bezier(.25, .46, .45, .94), box-shadow 300ms cubic-bezier(.25, .46, .45, .94), background-color 300ms cubic-bezier(.25, .46, .45, .94), -webkit-transform .4s cubic-bezier(.25, .46, .45, .94);
+  -moz-box-shadow: 1px 4px 6px 0 rgba(0, 0, 0, .15);
+  -webkit-box-shadow: 1px 4px 6px 0 rgba(0, 0, 0, .15);
+  box-shadow: 1px 4px 6px 0 rgba(0, 0, 0, .15);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background: #fafafa;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  vertical-align: top;
+  width: 100%;
+  display: inline-block;
+  margin: 0 15px 18px 0;
+  max-width: 300px;
+}
+
+.cards {
+  margin: 50px 5px;
+  max-width: 100%;
+  overflow: hidden;
+  height: 550px;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+@media only screen and (max-width:760px) {
+  .cards {
+    max-width: 99%;
+    margin: 20px auto;
+    flex-direction: column;
+    align-content: space-around;
+    align-items: center;
+  }
+  .settingsCards {
+    flex: 1 450px;
+    /*display: block;*/
+  }
+}
+
+.heading {
+  height: 80px;
+  background: #eee;
+  width: 100%;
+  margin: 0;
+}
+
+.line1 {
+  margin: 20px;
+  height: 8px;
+  background: #eee;
+  width: 50%;
+}
+
+.line2 {
+  margin: 20px;
+  height: 8px;
+  background: #eee;
+  width: 80%;
+}

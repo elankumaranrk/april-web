@@ -7,9 +7,10 @@
   </h2>
   <ol>
     <li *ngFor="let article of articles">
-      <!--<span>{{article.d}}</span>-->
+    
        {{article.t}}
+         <span (click)="actNow()" class="chatBotConv" [attr.data-chat-conv]="article.chatConv" *ngIf="article.action == 'required'">ACT NOW</span>
     </li>
   </ol>
-  <a class="learn-more" data-trackevent="01-doodles" href="http://www.google.com/doodles/" target="_blank" title="Learn More">Learn More</a>
+  <a *ngIf="title == 'Support'" (click)="actNow()" class="learn-more" data-trackevent="01-doodles" target="_blank" title="Learn More">Talk To An Expert</a>
 </section>

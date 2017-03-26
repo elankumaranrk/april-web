@@ -1,0 +1,52 @@
+.card {
+  cursor: pointer;
+  min-height: 340px;
+  transition: transform .4s cubic-bezier(.25, .46, .45, .94), opacity .4s cubic-bezier(.25, .46, .45, .94), box-shadow 300ms cubic-bezier(.25, .46, .45, .94), background-color 300ms cubic-bezier(.25, .46, .45, .94), -webkit-transform .4s cubic-bezier(.25, .46, .45, .94);
+  -moz-box-shadow: 1px 4px 6px 0 rgba(0, 0, 0, .15);
+  -webkit-box-shadow: 1px 4px 6px 0 rgba(0, 0, 0, .15);
+  box-shadow: 1px 4px 6px 0 rgba(0, 0, 0, .15);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background: #fafafa;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  vertical-align: top;
+  width: 80%;
+  display: flex;
+  margin: 0 15px 18px 0;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  background-color: dimgray;
+}
+
+.emailCard {
+  margin: 50px 5px;
+  max-width: 100%;
+  display: flex;
+  overflow: hidden;
+  height: 550px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  align-content: space-around;
+}
+
+p {
+  padding:10px;
+  text-align: center;
+  width: 100%;
+  font-weight: 300;
+  line-height: 24px;
+  letter-spacing: .55px;
+  font-size: 20px !important;
+  color: #fff;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, .5);
+}
+@media only screen and (max-width:760px) {
+  .card{
+    width: 100%;
+  }
+}

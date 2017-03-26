@@ -171,19 +171,15 @@
 
 
       setTimeout(function () {
-        var cards = document.getElementsByClassName("card");
+        var cards = document.getElementsByClassName("chatBotConv");
         console.log(cards.length);
         Array.from(cards).forEach(function (el) {
           el.addEventListener('click', function () {
-            // var chatInput = document.getElementsByTagName("input")[2];
-            // var sendButton = document.getElementsByClassName("wc-send")[0];
-
-            // chatInput.value = this.getAttribute("data-conv");
-            // console.log(sendButton);
-            postButtonMessage(this.getAttribute("data-conv"));
+            console.log(`pinged ${this.getAttribute("data-chat-conv")}`);
+            postButtonMessage(this.getAttribute("data-chat-conv"));
           });
         })
-      }, 1000);
+      }, 3000);
 
 
     };

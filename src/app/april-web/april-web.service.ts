@@ -24,8 +24,8 @@ export class AprilWebService {
       {
         title: "To-Do's",
         articles: [{ d: "2/28", t: "Product Life Pro Plus 8 ready for sale from 7th June, 2017" },
-        { d: "2/28", t: "Allianz in talks to sell 5% in Life Insurance Subsidary" },
-        { d: "3/4", t: "Life Insurance policy holders get 30 more days to pay premium" }],
+        { d: "2/28", t: "Stale address encountered for the policy owner, 60084939", action:"required", chatConv:"Change address for the owner of the policy 60084939", new:"true" },
+        { d: "3/4", t: "Stock Advisor:Tesla's stock prices are soaring this week! Revise your allocations", action:"required", chatConv:"Do an allocation change" }],
         cardImage: "/assets/img/pending.jpg"
       },
       {

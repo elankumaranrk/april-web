@@ -1,0 +1,18 @@
+<april-header [connected]="(af.auth | async)" (signIn)="login($event)" (signOut)="logout($event)">
+</april-header>
+<div [class.hero]=true>
+  <div class="image-holder">
+    <!--<img alt="The April" class="hero-image" src="/assets/img/playground-header.jpg">-->
+  </div>
+  <div class="center-wrapper hero-content">
+    <h1 class="hero-title">
+      The April
+    </h1>
+    <p class="hero-subtitle">
+      Feed your curiosity and explore the world of Insurance.
+    </p>
+  </div>
+  <router-outlet></router-outlet>
+ 
+</div>
+<!--<april-footer></april-footer>-->
