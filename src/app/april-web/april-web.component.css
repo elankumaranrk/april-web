@@ -10,6 +10,7 @@ april-cards {
 
 .cards {
   margin: 50px auto;
+  margin-bottom: 10px;
   max-width: 90%;
   display: flex;
   flex-wrap: wrap;
@@ -27,7 +28,6 @@ april-cards {
     display: block;
   }
   .hero {
-    height: 300px !important;
     position: relative;
   }
   .hero-title {
@@ -44,7 +44,6 @@ april-cards {
 }
 
 .hero {
-  height: 469px;
   position: relative;
   width: 100%;
 }
@@ -224,4 +223,10 @@ april-footer {
 /*position: absolute;
 overflow-x: hidden;*/
 
+}
+router-outlet {
+  z-index: 10001;
+}
+april-footer{
+  z-index: -1;
 }

@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
 .wc-header {
   /*border-bottom: solid 1px #143861;*/
   padding: 25px 30px 10px 40px;
@@ -28,9 +28,10 @@
 
 @media screen and (max-width: 768px) {
   .wc-header {
-    /*border-bottom: solid 1px #143861;*/
-    padding: 25px 30px 10px 70px;
+    border-bottom: solid 1px #143861;
+    /*padding: 25px 30px 10px 70px;
     background: #143861;
-    color: #fafafa;
+    color: #fafafa;*/
+
   }
 }

@@ -41,6 +41,9 @@ april-cards {
   .image-holder {
     height: 300px !important;
   }
+  .m {
+    display: none;
+  }
 }
 
 .hero {
@@ -165,7 +168,7 @@ april-cards {
 }
 
 .m {
-  display: none;
+  max-height: calc(100vh -500px);
   overflow: hidden;
 }
 
@@ -223,5 +226,12 @@ april-footer {
 .hide{
 /*position: absolute;
 overflow-x: hidden;*/
-
+/*display: none;*/
 }
+.bot{
+  position: fixed;
+  bottom: 0;
+  min-width: 640px;
+  z-index: 2000;
+}
+

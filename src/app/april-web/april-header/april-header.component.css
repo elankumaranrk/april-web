@@ -71,6 +71,7 @@
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+  text-transform: uppercase;
 }
 
 .luxbar-item {
@@ -220,12 +221,13 @@
 .luxbar-menu-light,
 .luxbar-menu-light .dropdown ul {
   background-color: #fff;
-  color: #4E84C4;
+  color: #4c4c4c;
 }
 
 .luxbar-menu-light .active,
 .luxbar-menu-light .luxbar-item:hover {
   background-color: #fff;
+  color: #4E84C4
 }
 
 .luxbar-menu-light .luxbar-hamburger span,

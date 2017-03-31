@@ -1,9 +1,9 @@
 <div *ngIf="(af.auth | async)" class="cards" [class.m]="openSearch==true">
-  <april-cards (beginChat)="cardClicked($event)" *ngFor="let item of cardData" [title]="item.title" [articles]="item.articles" [cardImage]="item.cardImage"></april-cards>
+  <april-cards (beginChat)="cardClicked($event)" *ngFor="let item of cardData | slice:0:4;" [title]="item.title" [articles]="item.articles" [cardImage]="item.cardImage"></april-cards>
 </div>
-<div class="log">
-  <div *ngIf="!(af.auth | async)">
+<div *ngIf="!(af.auth | async)" class="log">
+  <div >
     <p>Hello, please <span (click)="login()">login</span> to open your wallet</p>
   </div>
 </div>
- <april-bot [class.hide]="!openSearch" (closeChat)="closeChat()" [openSearch]="openSearch"></april-bot>
+ <april-bot [class.hide]="!openSearch"  (closeChat)="closeChat()" [openSearch]="openSearch"></april-bot>

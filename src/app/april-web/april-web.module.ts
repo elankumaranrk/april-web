@@ -9,10 +9,12 @@ import { AprilWebService } from './april-web.service';
 import {AprilWebComponent} from './april-web.component';
 import {AprilWebRoutingModule} from './april-web.routing.module';
 import { DragScrollModule } from 'angular2-drag-scroll';
+import { MaterialModule } from '@angular/material';
 
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 import { AprilSettingsComponent } from './april-settings/april-settings.component';
 import { AprilEmailComponent } from './april-email/april-email.component';
+import { AprilSettingsCardComponent } from './april-settings-card/april-settings-card.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyDF4SWIpepMmZV7V7fimmKxCJz3GZeh18w",
@@ -29,11 +31,12 @@ const myFirebaseAuthConfig = {
 @NgModule({
   imports: [
     CommonModule,
+    MaterialModule,
     AprilWebRoutingModule,
     DragScrollModule,
     AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
   ],
-  declarations: [AprilCardsComponent, AprilFooterComponent, AprilHeaderComponent, AprilBotComponent, AprilContainerComponent, AprilWebComponent, AprilSettingsComponent, AprilEmailComponent],
+  declarations: [AprilCardsComponent, AprilFooterComponent, AprilHeaderComponent, AprilBotComponent, AprilContainerComponent, AprilWebComponent, AprilSettingsComponent, AprilEmailComponent, AprilSettingsCardComponent],
   exports: [AprilWebComponent],
   providers: [AprilWebService]
 })
