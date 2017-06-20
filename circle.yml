@@ -1,20 +1,16 @@
 machine:
   timezone:
     America/Los_Angeles
-  services:
-    - docker
   node:
     version: 4.3.0
   environment:
     NODE_ENV: 'production'
-deployment:
-  production:
-    branch: [master]
-    commands:
-      - | # Test multiline yaml support
-        if [[ "$NODE_ENV" == "production" ]]; then
-          echo "Hey Elan"
-        else
-          echo "Hi Kumaran"
-        fi
+dependencies:
+  pre:
+    - | # Test multiline yaml support
+      if [[ "$NODE_ENV" == "production" ]]; then
+        echo "Hey Elan"
+      else
+        echo "Hi Kumaran"
+      fi
         
