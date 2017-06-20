@@ -11,5 +11,10 @@ deployment:
   production:
     branch: [master]
     commands:
-      - if [ $CIRCLE_BRANCH == 'master' ]; then echo "You have access!"; else echo "ACCESS DENIED!"; fi
+      - | # Test multiline yaml support
+        if [[ "$NODE_ENV" == "production" ]]; then
+          echo "Hey Elan"
+        else
+          echo "Hi Kumaran"
+        fi
         
