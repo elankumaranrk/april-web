@@ -13,5 +13,7 @@ dependencies:
       else
         echo "Hi Kumaran"
       fi
-    - ls 
+    - ls
+    - mv dev.dockerfile Dockerfile
+    - ls
         
