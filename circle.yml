@@ -11,5 +11,5 @@ deployment:
   production:
     branch: [master]
     commands:
-      - if [ $CIRCLE_BRANCH == 'master' ]; then echo "You have access!" else echo "ACCESS DENIED!" fi
+      - if [ $CIRCLE_BRANCH == 'master' ]; then echo "You have access!"; else echo "ACCESS DENIED!"; fi
         
