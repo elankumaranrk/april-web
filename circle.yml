@@ -8,7 +8,7 @@ machine:
 dependencies:
   pre:
     - | # Test multiline yaml support
-      if [[ "$NODE_ENV" == "production" ]]; then
+      if [[ $CIRCLE_BRANCH = "master" ]]; then
         echo "Hey Elan"
       else
         echo "Hi Kumaran"
